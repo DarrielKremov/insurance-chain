@@ -148,6 +148,7 @@ smart-contract/cache/
 smart-contract/typechain-types/
 smart-contract/coverage/
 smart-contract/coverage.json
+**/ignition/deployments/
 
 # Build outputs
 build/
