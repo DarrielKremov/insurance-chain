@@ -128,3 +128,33 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*.sublime-workspace
+*.sublime-project
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Hardhat
+smart-contract/artifacts/
+smart-contract/cache/
+smart-contract/typechain-types/
+smart-contract/coverage/
+smart-contract/coverage.json
+
+# Build outputs
+build/
+dist/
+
+# IPFS
+.ipfs/
+
+# Debug
+.debug/
