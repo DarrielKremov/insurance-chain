@@ -1,7 +1,11 @@
 # InsureChain
 
-This sample project allows users to submit insurance claims, view claim statuses, and for admin (contract owner address) to update claim statuses. The project also integrates IPFS for document storage.
-It uses typescript on frontend and backend to keep it simple, Solidity for the smart contract.
+This sample project allows users to submit insurance claims, view claim statuses, and for admin (contract owner address) to update claim statuses.
+It uses Typescript on frontend (React+Bootstrap) and backend (Express) to keep it simple, Solidity for the smart contract, using Hardhat for local contract development and testing. Ethers for dealing with the blockchain from our typescript apps.
+
+As the Ethereum Goerli testnet is now deprecated, we use the recommended replacement Sepolia instead for the deployed sample.
+
+It was decided to design the project for use with MetaMask - attempting to access any of the frontend pages will prompt the user to connect wallet through MetaMask. Any write actions will be sent to the backend for simple validation, preparation, and encryption, then the user will be prompted to sign the transaction and it goes to the blockchain. The usecase is simple enough that the smart contract does not need to do any super advanced security checks, but with usual security patterns in mind we use OpenZeppelin's implementations for ownership and reentrancy guard. 
 
 ## Prerequisites
 
@@ -89,3 +93,16 @@ npm start
 The frontend should launch automatically or you can navigate to it at ```http://localhost:3000```
 
 Connect with your new MetaMask address and play around!
+
+## Potential improvements
+For the sake of time this sample is extremely simple, though fairly verbose. 
+Some of the features that were considered: 
+- Allowing the user to upload files, for example images and documents that would be encrypted and stored in a object-store database (e.g. MinIO) or directly on IPFS. Dropped as setup time was getting too involved for a sample project.
+- Allowing the user to request (pull over push) payout of approved claims. Non-trivial implementation as maintaining on-chain privacy (not associating the claim with an identifiable customer/address) would require a ZKP setup.
+- Upgradable smart contract implementation. Too many risks associated, though often necessary in real-world cases.
+- Add admin roles that can be assigned to other addresses, so the contract owner is not the only one able to perform the admin actions.
+- Frontend/backend advance checks of current user role to fail requests and block certain UI pages or buttons. Decided to drop that for easier testing of contract owner check (making sure it fails for non-owners attempting to change status). Ultimately checks in those layers would be mostly for convenience and not for function anyway. Nice to haves, not critical for the sample.
+- Off-chain audit trail for all actions/transactions/etc, failed or successful.
+- Use the events fired from the smart contract to push notifications and update frontend data.
+- (Especially for admin view) Have a list of claims directly instead of having to request by ID. Optimal would be to maintain that list in off-chain database and updating it with the smart contract events
+- Better look 😭
