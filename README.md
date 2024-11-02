@@ -62,7 +62,7 @@ npx hardhat ignition deploy ignition/modules/InsuranceClaims.ts --parameters ign
 
 ### Setup MetaMask
 If you don't already have MetaMask installed, you can get it from https://metamask.io/download/
-
+The instructions below are for the admin/owner account, you can skip that section if you don't care about having the owner access.
 - From the accounts dropdown of the extension use the `Add account or hardware wallet` button
   <br/><br/>
   ![the button]({86002D36-F83D-403D-AA0A-7C05615E471A}.png)
