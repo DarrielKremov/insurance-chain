@@ -7,6 +7,10 @@ As the Ethereum Goerli testnet is now deprecated, we use the recommended replace
 
 It was decided to design the project for use with MetaMask - attempting to access any of the frontend pages will prompt the user to connect wallet through MetaMask. Any write actions will be sent to the backend for simple validation, preparation, and encryption, then the user will be prompted to sign the transaction and it goes to the blockchain. The usecase is simple enough that the smart contract does not need to do any super advanced security checks, but with usual security patterns in mind we use OpenZeppelin's implementations for ownership and reentrancy guard. 
 
+## Live demo
+- [View the contract deployed on Sepolia testnet](https://sepolia.etherscan.io/address/0xABaC54A755bdb6b7eCb6998608aAffB3bd979A0D)
+- [Access the frontend on GitHub Pages](https://darrielkremov.github.io/insurance-chain) with backend hosted on GCP.
+
 ## Prerequisites
 
 - [Node.js (v14 or later)](https://nodejs.org/)
@@ -105,4 +109,5 @@ Some of the features that were considered:
 - Off-chain audit trail for all actions/transactions/etc, failed or successful.
 - Use the events fired from the smart contract to push notifications and update frontend data.
 - (Especially for admin view) Have a list of claims directly instead of having to request by ID. Optimal would be to maintain that list in off-chain database and updating it with the smart contract events
+- Nicer handling of changing networks/accounts/etc on all sides - MetaMask, in-app, etc
 - Better look 😭

@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Web3Provider } from './context/Web3Context';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
@@ -44,6 +44,8 @@ export default function App() {
               </ProtectedRoute>
             } 
           />
+          {/* Workaround for issue with GitHub Pages */}
+          <Route path="/insurance-chain" element={<Navigate to="/" />} />
         </Routes>
       </BrowserRouter>
     </Web3Provider>

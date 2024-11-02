@@ -77,12 +77,14 @@ const SubmitClaim = () => {
         <div className="mb-3">
           <label htmlFor="amount" className="form-label">Amount</label>
           <input
-            type="text"
+            type="number"
             className="form-control"
             id="amount"
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
             required
+            min="1"
+            step="1"
           />
         </div>
         <button type="submit" className="btn btn-primary" disabled={loading}>

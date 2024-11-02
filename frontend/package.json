@@ -2,6 +2,7 @@
   "name": "insurechain",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://darrielkremov.github.io/insurance-chain/",
   "dependencies": {
     "@metamask/providers": "^18.1.1",
     "@testing-library/jest-dom": "^5.17.0",
@@ -16,6 +17,7 @@
     "@web3-react/injected-connector": "^6.0.7",
     "bootstrap": "^5.3.3",
     "ethers": "^6.13.4",
+    "gh-pages": "^6.2.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.27.0",
@@ -27,7 +29,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [

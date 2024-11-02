@@ -12,7 +12,7 @@ interface ClaimDetailsProps {
   claim: Claim;
 }
 
-const ClaimDetails: React.FC<ClaimDetailsProps> = ({ claim }) => {
+const ClaimDetails = ({ claim }: ClaimDetailsProps) => {
   return (
     <div className="card mt-3">
       <div className="card-body">
