@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/insurechain-pages/static/css/main.79d19d76.css",
+    "main.js": "/insurechain-pages/static/js/main.7af9b4be.js",
+    "static/js/453.5cadd8f8.chunk.js": "/insurechain-pages/static/js/453.5cadd8f8.chunk.js",
+    "index.html": "/insurechain-pages/index.html",
+    "main.79d19d76.css.map": "/insurechain-pages/static/css/main.79d19d76.css.map",
+    "main.7af9b4be.js.map": "/insurechain-pages/static/js/main.7af9b4be.js.map",
+    "453.5cadd8f8.chunk.js.map": "/insurechain-pages/static/js/453.5cadd8f8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.79d19d76.css",
+    "static/js/main.7af9b4be.js"
+  ]
+}
